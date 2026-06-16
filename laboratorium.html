@@ -314,27 +314,34 @@ pencemaran lingkungan berbasis komputasi dan literasi sains.
 
 <tr>
 <td width="30%">Nama Kelompok</td>
-<td><input type="text" placeholder="Tuliskan nama kelompok"></td>
+<td><input type="text" id="namaKelompok"
+placeholder="Tuliskan nama kelompok">
 </tr>
 
 <tr>
 <td>Nama Anggota</td>
-<td><textarea rows="3" placeholder="Tuliskan nama seluruh anggota kelompok"></textarea></td>
+<td><textarea id="anggota"
+rows="3"
+placeholder="Tuliskan nama seluruh anggota kelompok"></textarea>
 </tr>
 
 <tr>
 <td>Topik Pengamatan</td>
-<td><input type="text" placeholder="Contoh: Pencemaran Air Sungai / Kualitas Udara Lingkungan Sekolah"></td>
+<td><input type="text"
+id="topik"
+placeholder="Contoh: Pencemaran Air Sungai / Kualitas Udara Lingkungan Sekolah">
 </tr>
 
 <tr>
 <td>Lokasi Pengamatan</td>
-<td><input type="text" placeholder="Tuliskan lokasi pengamatan"></td>
+<td><input type="text"
+id="lokasi"
+placeholder="Tuliskan lokasi pengamatan">
 </tr>
 
 <tr>
 <td>Tanggal Praktikum</td>
-<td><input type="date"></td>
+<td><input type="date" id="tanggal">
 </tr>
 
 </table>
@@ -404,7 +411,8 @@ Jelaskan hubungan antara data yang diperoleh dengan konsep pencemaran lingkungan
 faktor penyebab, dampak yang mungkin terjadi, serta alternatif solusi yang dapat dilakukan.
 </p>
 
-<textarea rows="8"
+<textarea id="analisis"
+rows="8"
 placeholder="Tuliskan hasil analisis kelompok Anda di sini..."></textarea>
 
 </div>
@@ -436,13 +444,26 @@ placeholder="Tuliskan kesimpulan hasil praktikum kelompok Anda..."></textarea>
 <div class="card">
 
 <h2>🌱 Refleksi Kelompok</h2>
-
+  
 <p>
 Tuliskan satu tindakan nyata yang dapat dilakukan oleh kelompok Anda untuk membantu menjaga kualitas lingkungan di sekitar sekolah atau tempat tinggal.
 </p>
 
-<textarea rows="5"
+<textarea id="refleksi"
+rows="5"
 placeholder="Tuliskan refleksi atau rencana aksi kelompok..."></textarea>
+
+<div class="card">
+
+<h2>📄 Pengumpulan Laporan Praktikum</h2>
+
+<p>
+Setelah seluruh bagian laboratorium selesai diisi, klik tombol di bawah untuk mengunduh laporan praktikum dalam format Microsoft Word (.doc). File yang dihasilkan dapat dikumpulkan sesuai arahan guru.
+</p>
+
+<button onclick="downloadLaporan()">
+📥 Download Laporan (.doc)
+</button>
 
 </div>
 
@@ -531,6 +552,98 @@ hasil.innerHTML=
 
 }
 
+function downloadLaporan(){
+
+let namaKelompok =
+document.getElementById("namaKelompok").value;
+
+let anggota =
+document.getElementById("anggota").value;
+
+let topik =
+document.getElementById("topik").value;
+
+let lokasi =
+document.getElementById("lokasi").value;
+
+let tanggal =
+document.getElementById("tanggal").value;
+
+let analisis =
+document.getElementById("analisis").value;
+
+let kesimpulan =
+document.getElementById("kesimpulan").value;
+
+let refleksi =
+document.getElementById("refleksi").value;
+
+let isiDokumen = `
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Laporan Praktikum EcoThink</title>
+</head>
+<body>
+
+<h1 align="center">LABORATORIUM VIRTUAL ECOTHINK</h1>
+<h2 align="center">Laporan Hasil Praktikum</h2>
+
+<hr>
+
+<h3>Identitas Kelompok</h3>
+
+<p><b>Nama Kelompok :</b> ${namaKelompok}</p>
+<p><b>Anggota :</b><br>${anggota}</p>
+<p><b>Topik Pengamatan :</b> ${topik}</p>
+<p><b>Lokasi Pengamatan :</b> ${lokasi}</p>
+<p><b>Tanggal Praktikum :</b> ${tanggal}</p>
+
+<hr>
+
+<h3>Analisis Hasil Pengamatan</h3>
+<p>${analisis.replace(/\n/g,"<br>")}</p>
+
+<hr>
+
+<h3>Kesimpulan</h3>
+<p>${kesimpulan.replace(/\n/g,"<br>")}</p>
+
+<hr>
+
+<h3>Refleksi Kelompok</h3>
+<p>${refleksi.replace(/\n/g,"<br>")}</p>
+
+<hr>
+
+<p align="center">
+<b>EcoThink</b><br>
+Media Pembelajaran IPA Berbasis Komputasi
+</p>
+
+</body>
+</html>
+`;
+
+let blob = new Blob(
+['\ufeff', isiDokumen],
+{type:'application/msword'}
+);
+
+let link = document.createElement("a");
+
+link.href = URL.createObjectURL(blob);
+
+link.download = "Laporan_Laboratorium_EcoThink.doc";
+
+document.body.appendChild(link);
+
+link.click();
+
+document.body.removeChild(link);
+
+}
+  
 }
 
 </script>
