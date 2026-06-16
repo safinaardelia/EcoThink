@@ -68,6 +68,44 @@
         <li>SDG 13: Penanganan Perubahan Iklim</li>
     </ul>
 
+<hr>
+
+<h2>🧪 Simulasi Kualitas Udara</h2>
+
+<p>Masukkan nilai PM2.5 (µg/m³):</p>
+
+<input type="number" id="pm25">
+
+<button onclick="cekUdara()">
+Cek Status Udara
+</button>
+
+<p id="hasil"></p>
+
+<script>
+
+function cekUdara(){
+
+let pm25 =
+document.getElementById("pm25").value;
+
+if(pm25 > 55){
+
+document.getElementById("hasil").innerHTML =
+"❌ Udara Tidak Sehat";
+
+}
+else{
+
+document.getElementById("hasil").innerHTML =
+"✅ Udara Aman";
+
+}
+
+}
+
+</script>
+
 </body>
 
 </html>
