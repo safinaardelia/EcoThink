@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EcoThink | Dashboard Analisis Data</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+
+background:
+linear-gradient(
+rgba(255,255,255,0.93),
+rgba(255,255,255,0.93)),
+url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+color:#333;
+line-height:1.8;
+
+}
+
+.back-home{
+
+position:fixed;
+top:20px;
+left:20px;
+z-index:999;
+
+}
+
+.back-home a{
+
+background:#2e7d32;
+padding:12px 20px;
+border-radius:12px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+box-shadow:0 4px 10px rgba(0,0,0,0.25);
+transition:0.3s;
+
+}
+
+.back-home a:hover{
+
+background:#1b5e20;
+
+}
+
+.hero{
+
+height:100vh;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+padding:20px;
+
+color:white;
+
+background:
+linear-gradient(
+rgba(46,125,50,0.75),
+rgba(76,175,80,0.75)),
+url("https://images.unsplash.com/photo-1466611653911-95081537e5b7");
+
+background-size:cover;
+background-position:center;
+
+}
+
+.hero h1{
+
+font-size:68px;
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+font-size:24px;
+max-width:900px;
+
+}
+
+.btn-start{
+
+margin-top:30px;
+
+background:white;
+
+padding:15px 35px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:#2e7d32;
+
+font-size:20px;
+
+font-weight:bold;
+
+}
+
+.container{
+
+width:90%;
+max-width:1150px;
+margin:auto;
+padding:50px 0;
+
+}
+
+.card{
+
+background:white;
+padding:30px;
+margin-bottom:30px;
+border-radius:20px;
+box-shadow:0 4px 15px rgba(0,0,0,0.12);
+
+}
+
+.card h2{
+
+color:#2e7d32;
+margin-bottom:15px;
+
+}
+
+.card p{
+
+margin-bottom:12px;
+
+}
+
+ol{
+
+margin-left:25px;
+margin-top:10px;
+
+}
+
+table{
+
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+
+}
+
+table,th,td{
+
+border:1px solid #ddd;
+
+}
+
+th{
+
+background:#4caf50;
+color:white;
+padding:10px;
+
+}
+
+td{
+
+padding:10px;
+text-align:center;
+
+}
+
+input,
+select{
+
+width:100%;
+padding:10px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:15px;
+
+}
+
+button{
+
+margin-top:20px;
+margin-right:10px;
+background:#4caf50;
+color:white;
+padding:12px 25px;
+border:none;
+border-radius:10px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+
+}
+
+button:hover{
+
+background:#2e7d32;
+
+}
+
+canvas{
+
+width:100%;
+max-width:950px;
+height:450px;
+border:1px solid #ccc;
+background:white;
+border-radius:15px;
+margin-top:20px;
+
+}
+
+#hasilStatistik,
+#interpretasi,
+#kesimpulan{
+
+display:none;
+
+margin-top:20px;
+padding:20px;
+background:#e8f5e9;
+border-left:6px solid #4caf50;
+border-radius:10px;
+
+}
+
+footer{
+
+background:#2e7d32;
+padding:20px;
+text-align:center;
+color:white;
+margin-top:50px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="back-home">
+<a href="index.html">
+🏠 Kembali ke Beranda
+</a>
+</div>
+
+<section class="hero">
+
+<h1>📊 Dashboard Analisis Data EcoThink</h1>
+
+<p>
+
+Visualisasikan data lingkungan dan temukan pola melalui
+grafik interaktif berbasis komputasi.
+
+</p>
+
+<a href="#dashboard" class="btn-start">
+🚀 Mulai Analisis
+</a>
+
+</section>
+
+<div class="container" id="dashboard">
+
+<div class="card">
+
+<h2>📋 Petunjuk Penggunaan</h2>
+
+<ol>
+
+<li>Pilih jenis data yang akan dianalisis.</li>
+
+<li>Masukkan tujuh data hasil pengamatan.</li>
+
+<li>Klik tombol <b>Tampilkan Grafik</b>.</li>
+
+<li>Amati bentuk grafik dan statistik yang muncul.</li>
+
+<li>Baca interpretasi serta kesimpulan otomatis dari sistem.</li>
+
+<li>Bandingkan hasil analisis dengan data kelompok lain.</li>
+
+</ol>
+
+</div>
+
+<div class="card">
+
+<h2>📝 Input Data Pengamatan</h2>
+
+<p>Pilih jenis data dan masukkan nilai hasil pengamatan.</p>
+
+<label><b>Jenis Data:</b></label>
+
+<select id="jenisData">
+
+<option>PM2.5 (Kualitas Udara)</option>
+
+<option>pH Air</option>
+
+<option>TDS Air (ppm)</option>
+
+<option>Data Lingkungan Lainnya</option>
+
+</select>
+
+<table>
+
+<tr>
+<th>Hari</th>
+<th>Nilai Pengamatan</th>
+</tr>
+
+<tr>
+<td>Senin</td>
+<td><input type="number" id="d1"></td>
+</tr>
+
+<tr>
+<td>Selasa</td>
+<td><input type="number" id="d2"></td>
+</tr>
+
+<tr>
+<td>Rabu</td>
+<td><input type="number" id="d3"></td>
+</tr>
+
+<tr>
+<td>Kamis</td>
+<td><input type="number" id="d4"></td>
+</tr>
+
+<tr>
+<td>Jumat</td>
+<td><input type="number" id="d5"></td>
+</tr>
+
+<tr>
+<td>Sabtu</td>
+<td><input type="number" id="d6"></td>
+</tr>
+
+<tr>
+<td>Minggu</td>
+<td><input type="number" id="d7"></td>
+</tr>
+
+</table>
+
+<button onclick="buatGrafik()">
+🔍 Tampilkan Grafik
+</button>
+
+<button onclick="resetData()">
+🗑️ Reset Data
+</button>
+
+<button onclick="downloadGrafik()">
+📥 Download Grafik (.png)
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>📈 Visualisasi Data</h2>
+
+<canvas id="grafik" width="900" height="450"></canvas>
+
+<div id="hasilStatistik"></div>
+
+<div id="interpretasi"></div>
+
+<div id="kesimpulan"></div>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>
+© 2026 EcoThink - Media Pembelajaran IPA Berbasis Komputasi
+</p>
+
+</footer>
+
+<script>
+
+const canvas =
+document.getElementById("grafik");
+
+const ctx =
+canvas.getContext("2d");
+
+function buatGrafik(){
+
+let data=[
+
+Number(document.getElementById("d1").value),
+Number(document.getElementById("d2").value),
+Number(document.getElementById("d3").value),
+Number(document.getElementById("d4").value),
+Number(document.getElementById("d5").value),
+Number(document.getElementById("d6").value),
+Number(document.getElementById("d7").value)
+
+];
+
+for(let i=0;i<data.length;i++){
+
+if(isNaN(data[i]) || data[i]==0){
+
+alert(
+"Silakan isi seluruh data pengamatan terlebih dahulu."
+);
+
+return;
+
+}
+
+}
+
+let hari=[
+"Sen",
+"Sel",
+"Rab",
+"Kam",
+"Jum",
+"Sab",
+"Min"
+];
+
+ctx.clearRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+ctx.beginPath();
+
+ctx.strokeStyle="#000";
+ctx.lineWidth=2;
+
+ctx.moveTo(70,30);
+ctx.lineTo(70,380);
+ctx.lineTo(840,380);
+
+ctx.stroke();
+
+let maksimum=
+Math.max(...data);
+
+let minimum=
+Math.min(...data);
+
+let rentang=
+maksimum-minimum;
+
+if(rentang==0){
+rentang=1;
+}
+
+ctx.fillStyle="#000";
+ctx.font="14px Segoe UI";
+
+for(let i=0;i<hari.length;i++){
+
+let x=
+90+(i*110);
+
+ctx.fillText(
+hari[i],
+x-10,
+405
+);
+
+}
+
+ctx.beginPath();
+
+ctx.strokeStyle="#4caf50";
+ctx.lineWidth=3;
+
+let koordinat=[];
+
+for(let i=0;i<data.length;i++){
+
+let x=
+90+(i*110);
+
+let y=
+360-
+(
+(data[i]-minimum)
+/rentang
+)
+*280;
+
+koordinat.push({
+x:x,
+y:y
+});
+
+if(i==0){
+
+ctx.moveTo(
+x,
+y
+);
+
+}
+else{
+
+ctx.lineTo(
+x,
+y
+);
+
+}
+
+}
+
+ctx.stroke();
+
+for(let i=0;i<koordinat.length;i++){
+
+ctx.beginPath();
+
+ctx.fillStyle="#2e7d32";
+
+ctx.arc(
+koordinat[i].x,
+koordinat[i].y,
+5,
+0,
+2*Math.PI
+);
+
+ctx.fill();
+
+ctx.fillStyle="#000";
+
+ctx.fillText(
+data[i],
+koordinat[i].x-8,
+koordinat[i].y-10
+);
+
+}
+
+let total=0;
+
+for(let i=0;i<data.length;i++){
+total+=data[i];
+}
+
+let rata=
+(total/data.length).toFixed(2);
+
+document.getElementById(
+"hasilStatistik"
+).style.display="block";
+
+document.getElementById(
+"hasilStatistik"
+).innerHTML=
+
+"<h3>📊 Statistik Data</h3><br>" +
+
+"<b>Jenis Data :</b> " +
+document.getElementById(
+"jenisData"
+).value +
+
+"<br><br>" +
+
+"<b>Rata-rata :</b> " +
+rata +
+
+"<br>" +
+
+"<b>Nilai Maksimum :</b> " +
+maksimum +
+
+"<br>" +
+
+"<b>Nilai Minimum :</b> " +
+minimum +
+
+"<br>" +
+
+"<b>Rentang Data :</b> " +
+(maksimum-minimum);
+
+let naik=0;
+let turun=0;
+
+for(let i=1;i<data.length;i++){
+
+if(data[i]>data[i-1]){
+naik++;
+}
+
+if(data[i]<data[i-1]){
+turun++;
+}
+
+}
+
+let status="";
+let penjelasan="";
+
+document.getElementById(
+"interpretasi"
+).style.display="block";
+
+if(
+(maksimum-minimum)<=5
+){
+
+status="📗 Data Relatif Stabil";
+
+penjelasan=
+"Data menunjukkan variasi yang kecil antar waktu pengamatan. Kondisi ini mengindikasikan bahwa parameter lingkungan yang diamati relatif konsisten dan tidak mengalami perubahan yang berarti.";
+
+}
+else if(
+naik>=5
+){
+
+status="🟠 Tren Meningkat";
+
+penjelasan=
+"Data memperlihatkan kecenderungan meningkat dari waktu ke waktu. Pola seperti ini dapat mengindikasikan terjadinya perubahan kondisi lingkungan yang perlu mendapatkan perhatian lebih lanjut.";
+
+}
+else if(
+turun>=5
+){
+
+status="🟢 Tren Menurun";
+
+penjelasan=
+"Data memperlihatkan kecenderungan menurun. Dibandingkan hasil awal pengamatan, kondisi ini dapat menunjukkan adanya perbaikan kualitas lingkungan.";
+
+}
+else{
+
+status="🔵 Data Berfluktuasi";
+
+penjelasan=
+"Data mengalami perubahan naik dan turun secara tidak teratur. Pola ini menunjukkan bahwa kondisi lingkungan dapat dipengaruhi oleh berbagai faktor sehingga diperlukan pengamatan lanjutan.";
+
+}
+
+document.getElementById(
+"interpretasi"
+).innerHTML=
+
+"<h3>"+status+"</h3><br>" +
+
+penjelasan;
+
+document.getElementById(
+"kesimpulan"
+).style.display="block";
+
+let isiKesimpulan="";
+
+if(status=="📗 Data Relatif Stabil"){
+
+isiKesimpulan=
+"Berdasarkan visualisasi dan analisis data, hasil pengamatan menunjukkan pola yang relatif stabil dengan rata-rata sebesar <b>"+rata+"</b>. Dibandingkan dengan pola data yang meningkat atau berfluktuasi, kondisi ini menunjukkan bahwa parameter lingkungan yang diamati masih cukup konsisten dan belum mengalami perubahan yang signifikan.";
+
+}
+else if(status=="🟠 Tren Meningkat"){
+
+isiKesimpulan=
+"Berdasarkan visualisasi dan analisis data, hasil pengamatan menunjukkan kecenderungan meningkat dengan rata-rata sebesar <b>"+rata+"</b>. Dibandingkan dengan data yang stabil, pola ini mengindikasikan adanya peningkatan parameter lingkungan yang perlu diperhatikan agar tidak berdampak negatif terhadap kualitas lingkungan.";
+
+}
+else if(status=="🟢 Tren Menurun"){
+
+isiKesimpulan=
+"Berdasarkan visualisasi dan analisis data, hasil pengamatan menunjukkan kecenderungan menurun dengan rata-rata sebesar <b>"+rata+"</b>. Pola ini dapat diinterpretasikan sebagai adanya perbaikan kondisi lingkungan dibandingkan dengan hasil pengamatan sebelumnya.";
+
+}
+else{
+
+isiKesimpulan=
+"Berdasarkan visualisasi dan analisis data, hasil pengamatan menunjukkan pola yang berfluktuasi dengan rata-rata sebesar <b>"+rata+"</b>. Dibandingkan dengan data yang relatif stabil, pola ini mengindikasikan bahwa kondisi lingkungan dipengaruhi oleh berbagai faktor sehingga diperlukan pengamatan berkelanjutan untuk memperoleh gambaran yang lebih representatif.";
+
+}
+
+document.getElementById(
+"kesimpulan"
+).innerHTML=
+
+"<h3>📝 Kesimpulan Otomatis</h3><br>" +
+
+isiKesimpulan;
+
+}
+
+function resetData(){
+
+document.getElementById("d1").value="";
+document.getElementById("d2").value="";
+document.getElementById("d3").value="";
+document.getElementById("d4").value="";
+document.getElementById("d5").value="";
+document.getElementById("d6").value="";
+document.getElementById("d7").value="";
+
+ctx.clearRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
+
+document.getElementById(
+"hasilStatistik"
+).style.display="none";
+
+document.getElementById(
+"interpretasi"
+).style.display="none";
+
+document.getElementById(
+"kesimpulan"
+).style.display="none";
+
+}
+
+function downloadGrafik(){
+
+let link=
+document.createElement("a");
+
+link.download=
+"Grafik_EcoThink.png";
+
+link.href=
+canvas.toDataURL(
+"image/png"
+);
+
+link.click();
+
+}
+
+</script>
+
+</body>
+
+</html>
