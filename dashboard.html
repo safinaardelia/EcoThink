@@ -478,11 +478,96 @@ ctx.lineTo(840,380);
 
 ctx.stroke();
 
+// Judul Grafik
+
+ctx.fillStyle="#000";
+ctx.font="bold 22px Segoe UI";
+ctx.textAlign="center";
+
+ctx.fillText(
+"DASHBOARD ANALISIS DATA ECOTHINK",
+450,
+25
+);
+
+ctx.font="16px Segoe UI";
+
+ctx.fillText(
+document.getElementById("jenisData").value,
+450,
+50
+);
+
+ctx.textAlign="start";
+
+// Label Sumbu
+
+ctx.font="bold 15px Segoe UI";
+
+ctx.fillText(
+"Nilai Pengamatan",
+15,
+210
+);
+
+ctx.fillText(
+"Hari Pengamatan",
+370,
+435
+);
+
+// Panah sumbu Y
+
+ctx.beginPath();
+
+ctx.moveTo(70,30);
+ctx.lineTo(65,40);
+
+ctx.moveTo(70,30);
+ctx.lineTo(75,40);
+
+ctx.stroke();
+
+// Panah sumbu X
+
+ctx.beginPath();
+
+ctx.moveTo(840,380);
+ctx.lineTo(830,375);
+
+ctx.moveTo(840,380);
+ctx.lineTo(830,385);
+
+ctx.stroke();
+  
 let maksimum=
 Math.max(...data);
 
 let minimum=
 Math.min(...data);
+
+// Skala sumbu Y
+
+ctx.font="12px Segoe UI";
+
+for(let i=0;i<=5;i++){
+
+let nilai=
+Math.round(
+minimum+
+((maksimum-minimum)/5)*(5-i)
+);
+
+let y=
+80+(i*56);
+
+ctx.fillText(
+nilai,
+30,
+y
+);
+
+}
 
 let rentang=
 maksimum-minimum;
@@ -495,6 +580,65 @@ ctx.fillStyle="#000";
 ctx.font="14px Segoe UI";
 
 for(let i=0;i<Sampel.length;i++){
+
+// Menentukan titik maksimum dan minimum
+
+let indeksMax=
+data.indexOf(maksimum);
+
+let indeksMin=
+data.indexOf(minimum);
+
+// Label titik maksimum
+
+ctx.strokeStyle="#d32f2f";
+ctx.fillStyle="#d32f2f";
+ctx.font="bold 13px Segoe UI";
+
+ctx.beginPath();
+
+ctx.moveTo(
+koordinat[indeksMax].x,
+koordinat[indeksMax].y
+);
+
+ctx.lineTo(
+koordinat[indeksMax].x+40,
+koordinat[indeksMax].y-40
+);
+
+ctx.stroke();
+
+ctx.fillText(
+"★ Tertinggi ("+maksimum+")",
+koordinat[indeksMax].x+45,
+koordinat[indeksMax].y-45
+);
+
+// Label titik minimum
+
+ctx.strokeStyle="#1565c0";
+ctx.fillStyle="#1565c0";
+
+ctx.beginPath();
+
+ctx.moveTo(
+koordinat[indeksMin].x,
+koordinat[indeksMin].y
+);
+
+ctx.lineTo(
+koordinat[indeksMin].x+40,
+koordinat[indeksMin].y+40
+);
+
+ctx.stroke();
+
+ctx.fillText(
+"★ Terendah ("+minimum+")",
+koordinat[indeksMin].x+45,
+koordinat[indeksMin].y+50
+);
 
 let x=
 90+(i*110);
@@ -587,7 +731,7 @@ total+=data[i];
 
 let rata=
 (total/data.length).toFixed(2);
-
+  
 document.getElementById(
 "hasilStatistik"
 ).style.display="block";
@@ -641,6 +785,23 @@ turun++;
 let status="";
 let penjelasan="";
 
+// Ringkasan pada gambar
+
+ctx.fillStyle="#000";
+ctx.font="13px Segoe UI";
+
+ctx.fillText(
+"Rata-rata : " + rata,
+80,
+445
+);
+
+ctx.fillText(
+"Pola Data : " + status.replace(/[📗🟠🟢🔵]/g,"").trim(),
+300,
+445
+);
+  
 document.getElementById(
 "interpretasi"
 ).style.display="block";
