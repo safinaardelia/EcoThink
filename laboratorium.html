@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EcoThink | Laboratorium Digital</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+background:
+linear-gradient(
+rgba(255,255,255,0.90),
+rgba(255,255,255,0.90)),
+url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+color:#333;
+line-height:1.8;
+
+}
+
+.back-home{
+position:fixed;
+top:20px;
+left:20px;
+z-index:9999;
+}
+
+.back-home a{
+background:#2e7d32;
+color:white;
+text-decoration:none;
+padding:12px 20px;
+border-radius:12px;
+font-weight:bold;
+box-shadow:0 4px 10px rgba(0,0,0,0.25);
+transition:0.3s;
+}
+
+.back-home a:hover{
+background:#1b5e20;
+transform:scale(1.05);
+}
+
+header{
+
+height:100vh;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+color:white;
+
+background:
+linear-gradient(
+rgba(46,125,50,0.75),
+rgba(76,175,80,0.75)),
+url("https://images.unsplash.com/photo-1473773508845-188df298d2d1");
+
+background-size:cover;
+background-position:center;
+
+}
+
+header h1{
+
+font-size:70px;
+
+margin-bottom:20px;
+
+}
+
+header p{
+
+font-size:24px;
+
+width:70%;
+
+}
+
+.btn{
+
+margin-top:30px;
+
+padding:15px 30px;
+
+border:none;
+
+border-radius:50px;
+
+background:white;
+
+color:#2e7d32;
+
+font-weight:bold;
+
+text-decoration:none;
+
+transition:0.3s;
+
+}
+
+.btn:hover{
+
+transform:scale(1.08);
+
+}
+
+nav{
+
+background:#2e7d32;
+
+padding:15px;
+
+text-align:center;
+
+position:sticky;
+
+top:0;
+
+z-index:1000;
+
+}
+
+nav a{
+
+color:white;
+
+text-decoration:none;
+
+margin:0 15px;
+
+font-weight:bold;
+
+}
+
+.container{
+
+width:90%;
+
+max-width:1200px;
+
+margin:auto;
+
+padding:40px 0;
+
+}
+
+.card{
+
+background:white;
+
+margin-bottom:30px;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:0 4px 15px rgba(0,0,0,0.15);
+
+}
+
+.card h2{
+
+color:#2e7d32;
+
+margin-bottom:15px;
+
+}
+
+.quiz-box{
+
+background:#f1f8e9;
+
+padding:20px;
+
+margin-top:20px;
+
+border-radius:15px;
+
+}
+
+input{
+
+padding:12px;
+
+width:220px;
+
+border-radius:10px;
+
+border:1px solid #ccc;
+
+margin-right:10px;
+
+}
+
+button{
+
+padding:12px 20px;
+
+border:none;
+
+border-radius:10px;
+
+background:#4caf50;
+
+color:white;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+button:hover{
+
+background:#2e7d32;
+
+}
+
+.result{
+
+margin-top:15px;
+
+font-weight:bold;
+
+font-size:17px;
+
+}
+
+.info{
+
+background:#e8f5e9;
+
+padding:15px;
+
+border-left:8px solid #4caf50;
+
+border-radius:10px;
+
+margin-top:20px;
+
+}
+
+footer{
+
+background:#2e7d32;
+
+color:white;
+
+text-align:center;
+
+padding:30px;
+
+margin-top:50px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="back-home">
+<a href="index.html">🏠 Kembali ke Beranda</a>
+</div>
+
+<header>
+
+<h1>🧪 Laboratorium Digital</h1>
+
+<p>
+
+Eksplorasi kualitas lingkungan melalui simulasi interaktif
+berbasis komputasi untuk memahami pencemaran udara dan air
+serta mendukung Sustainable Development Goals (SDGs).
+
+</p>
+
+<a href="#lab" class="btn">
+🔬 Mulai Eksplorasi
+</a>
+
+</header>
+
+<nav>
+
+<a href="index.html">🏠 Beranda</a>
+
+<a href="#lab">🧪 Laboratorium</a>
+
+<a href="materi.html">📚 Materi</a>
+
+<a href="kuis.html">📝 Kuis EcoThink</a>
+
+</nav>
+
+<div class="container" id="lab">
+
+<div class="card">
+
+<h2>🌫️ Analisis PM2.5</h2>
+
+<p>
+PM2.5 adalah partikel udara berukuran sangat kecil yang dapat
+masuk ke sistem pernapasan. Masukkan nilai PM2.5 untuk mengetahui
+kondisi kualitas udara di lingkungan sekitar.
+</p>
+
+<div class="quiz-box">
+
+<input type="number" id="pm25" placeholder="Masukkan nilai PM2.5">
+
+<button onclick="cekPM25()">
+Analisis
+</button>
+
+<p id="hasilPM25" class="result"></p>
+
+</div>
+
+<div class="info">
+<b>💡 Informasi:</b><br>
+Semakin tinggi nilai PM2.5, semakin besar risiko gangguan
+kesehatan terutama pada sistem pernapasan.
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>💧 Analisis TDS Air</h2>
+
+<p>
+TDS (Total Dissolved Solids) menunjukkan jumlah zat terlarut
+di dalam air. Nilai TDS dapat digunakan sebagai salah satu
+indikator kualitas air minum.
+</p>
+
+<div class="quiz-box">
+
+<input type="number" id="tds" placeholder="Masukkan nilai TDS">
+
+<button onclick="cekTDS()">
+Analisis
+</button>
+
+<p id="hasilTDS" class="result"></p>
+
+</div>
+
+<div class="info">
+<b>💡 Informasi:</b><br>
+Air minum dengan nilai TDS yang terlalu tinggi sebaiknya
+diperiksa lebih lanjut sebelum dikonsumsi.
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>⚗️ Analisis Derajat Keasaman (pH)</h2>
+
+<p>
+Nilai pH menunjukkan tingkat keasaman atau kebasaan suatu
+larutan. Air minum yang baik umumnya memiliki pH 6,5–8,5.
+</p>
+
+<div class="quiz-box">
+
+<input type="number" step="0.1" id="ph" placeholder="Masukkan nilai pH">
+
+<button onclick="cekPH()">
+Analisis
+</button>
+
+<p id="hasilPH" class="result"></p>
+
+</div>
+
+<div class="info">
+<b>💡 Informasi:</b><br>
+pH yang terlalu rendah menunjukkan sifat asam, sedangkan
+pH yang terlalu tinggi menunjukkan sifat basa.
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>📋 Ringkasan Laboratorium Digital</h2>
+
+<p>
+Laboratorium Digital EcoThink membantu peserta didik memahami
+hubungan antara kualitas udara, kualitas air, dan kesehatan
+lingkungan melalui simulasi sederhana berbasis komputasi.
+</p>
+
+<ul style="margin-top:15px; margin-left:25px;">
+<li>🌫️ Mengidentifikasi tingkat pencemaran udara melalui PM2.5.</li>
+<li>💧 Menganalisis kualitas air berdasarkan nilai TDS.</li>
+<li>⚗️ Menentukan tingkat keasaman air melalui parameter pH.</li>
+<li>🌍 Mendukung literasi sains dan pencapaian SDGs.</li>
+</ul>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>
+
+© 2026 EcoThink | Media Pembelajaran IPA Berbasis Komputasi dan SDGs
+
+</p>
+
+</footer>
+
+<script>
+
+function cekPM25(){
+
+let nilai = document.getElementById("pm25").value;
+
+if(nilai==""){
+document.getElementById("hasilPM25").innerHTML =
+"⚠️ Masukkan nilai PM2.5 terlebih dahulu.";
+return;
+}
+
+nilai = parseFloat(nilai);
+
+if(nilai<=15){
+document.getElementById("hasilPM25").innerHTML =
+"✅ Kualitas udara sangat baik dan relatif aman.";
+}
+else if(nilai<=35){
+document.getElementById("hasilPM25").innerHTML =
+"🟢 Kualitas udara cukup baik, tetap jaga lingkungan.";
+}
+else if(nilai<=55){
+document.getElementById("hasilPM25").innerHTML =
+"🟡 Kualitas udara sedang, kelompok sensitif perlu berhati-hati.";
+}
+else{
+document.getElementById("hasilPM25").innerHTML =
+"🔴 Udara tidak sehat. Kurangi aktivitas luar ruangan dan gunakan masker.";
+}
+
+}
+
+function cekTDS(){
+
+let nilai = document.getElementById("tds").value;
+
+if(nilai==""){
+document.getElementById("hasilTDS").innerHTML =
+"⚠️ Masukkan nilai TDS terlebih dahulu.";
+return;
+}
+
+nilai = parseFloat(nilai);
+
+if(nilai<=300){
+document.getElementById("hasilTDS").innerHTML =
+"✅ Air relatif baik untuk dikonsumsi.";
+}
+else if(nilai<=500){
+document.getElementById("hasilTDS").innerHTML =
+"🟡 Kualitas air cukup baik, namun perlu diperhatikan.";
+}
+else{
+document.getElementById("hasilTDS").innerHTML =
+"🔴 TDS tinggi. Disarankan melakukan pemeriksaan kualitas air lebih lanjut.";
+}
+
+}
+
+function cekPH(){
+
+let nilai = document.getElementById("ph").value;
+
+if(nilai==""){
+document.getElementById("hasilPH").innerHTML =
+"⚠️ Masukkan nilai pH terlebih dahulu.";
+return;
+}
+
+nilai = parseFloat(nilai);
+
+if(nilai<6.5){
+document.getElementById("hasilPH").innerHTML =
+"🟠 Air cenderung bersifat asam.";
+}
+else if(nilai<=8.5){
+document.getElementById("hasilPH").innerHTML =
+"✅ pH berada pada rentang ideal untuk air minum.";
+}
+else{
+document.getElementById("hasilPH").innerHTML =
+"🔵 Air cenderung bersifat basa.";
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
+```
