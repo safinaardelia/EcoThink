@@ -1,225 +1,336 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 
 <head>
-    <title>EcoThink</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EcoThink</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+
+background:
+linear-gradient(
+rgba(0,0,0,0.45),
+rgba(0,0,0,0.45)),
+url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+color:white;
+
+}
+
+.hero{
+
+height:100vh;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+padding:20px;
+
+}
+
+.hero h1{
+
+font-size:80px;
+
+margin-bottom:20px;
+
+}
+
+.hero p{
+
+font-size:24px;
+
+max-width:800px;
+
+line-height:1.8;
+
+}
+
+.btn-start{
+
+margin-top:30px;
+
+background:#4caf50;
+
+padding:15px 35px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:white;
+
+font-size:20px;
+
+font-weight:bold;
+
+}
+
+.btn-start:hover{
+
+background:#2e7d32;
+
+}
+
+.menu{
+
+background:white;
+
+padding:60px 20px;
+
+color:#333;
+
+}
+
+.menu h2{
+
+text-align:center;
+
+margin-bottom:40px;
+
+color:#2e7d32;
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+max-width:1200px;
+
+margin:auto;
+
+}
+
+.card{
+
+background:#f8fff8;
+
+padding:30px;
+
+border-radius:20px;
+
+text-align:center;
+
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+
+transition:0.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.card a{
+
+display:inline-block;
+
+margin-top:15px;
+
+background:#4caf50;
+
+padding:10px 20px;
+
+border-radius:10px;
+
+text-decoration:none;
+
+color:white;
+
+font-weight:bold;
+
+}
+
+.sdgs{
+
+padding:60px 20px;
+
+background:#e8f5e9;
+
+color:#333;
+
+}
+
+.sdgs h2{
+
+text-align:center;
+
+margin-bottom:30px;
+
+color:#2e7d32;
+
+}
+
+footer{
+
+background:#2e7d32;
+
+padding:20px;
+
+text-align:center;
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-    <h1>🌍 EcoThink</h1>
+<section class="hero">
 
-    <h2>Media Pembelajaran IPA Berbasis Komputasi</h2>
+<h1>🌍 EcoThink</h1>
 
-    <p>
-        Materi: Pencemaran Lingkungan SMP Kelas VII
-    </p>
+<p>
 
-    <hr>
+Media Pembelajaran IPA Berbasis Komputasi untuk memahami
+Pencemaran Lingkungan, meningkatkan Literasi Sains,
+serta mendukung Sustainable Development Goals (SDGs).
 
-    <h2>📖 Deskripsi</h2>
+</p>
 
-    <p>
-        EcoThink merupakan media pembelajaran IPA berbasis komputasi yang membahas materi
-        pencemaran lingkungan. Media ini membantu siswa memahami pencemaran udara,
-        air, dan tanah melalui materi pembelajaran, simulasi sederhana, dan visualisasi data.
-    </p>
+<a href="#menu" class="btn-start">
 
-    <hr>
+🚀 Mulai Belajar
 
-    <h2>🎯 Tujuan Pembelajaran</h2>
+</a>
 
-    <ul>
-        <li>Peserta didik mampu menjelaskan pengertian pencemaran lingkungan dengan tepat.</li>
-        <li>Peserta didik mampu menganalisis penyebab pencemaran lingkungan dengan benar.</li>
-        <li>Peserta didik mampu menganalisis dampak pencemaran lingkungan dan memberikan solusi secara tepat.</li>
-        <li>Peserta didik mampu menghubungkan pencemaran lingkungan dengan kehidupan sehari-hari.</li>
-    </ul>
+</section>
 
-    <hr>
+<section class="menu" id="menu">
 
-    <h2>📚 Materi Pembelajaran</h2>
+<h2>Menu Pembelajaran</h2>
 
-    <h3>Pencemaran Udara</h3>
+<div class="cards">
 
-    <p>
-        Pencemaran udara adalah masuknya zat pencemar ke atmosfer sehingga kualitas udara menurun.
-    </p>
+<div class="card">
 
-    <h3>Pencemaran Air</h3>
+<h3>📚 Materi</h3>
 
-    <p>
-        Pencemaran air terjadi ketika zat pencemar masuk ke badan air sehingga kualitas air menurun.
-    </p>
+<p>
+Materi interaktif pencemaran lingkungan.
+</p>
 
-    <h3>Pencemaran Tanah</h3>
+<a href="materi.html">
+Buka
+</a>
 
-    <p>
-        Pencemaran tanah terjadi akibat masuknya bahan pencemar ke dalam tanah yang dapat merusak lingkungan.
-    </p>
+</div>
 
-    <hr>
+<div class="card">
 
-    <h2>🌍 SDGs Terkait</h2>
+<h3>🧪 Laboratorium Digital</h3>
 
-    <ul>
-        <li>SDG 3: Kehidupan Sehat dan Sejahtera</li>
-        <li>SDG 11: Kota dan Permukiman Berkelanjutan</li>
-        <li>SDG 13: Penanganan Perubahan Iklim</li>
-    </ul>
+<p>
+Simulasi PM2.5, pH dan kualitas air.
+</p>
 
-<hr>
+<a href="laboratorium.html">
+Buka
+</a>
 
-<h2>🧪 Simulasi Kualitas Udara</h2>
+</div>
 
-<p>Masukkan nilai PM2.5 (µg/m³):</p>
+<div class="card">
 
-<input type="number" id="pm25">
+<h3>🎮 Game SDGs</h3>
 
-<button onclick="cekUdara()">
-Cek Status Udara
-</button>
+<p>
+Belajar sambil bermain.
+</p>
 
-<p id="hasil"></p>
+<a href="game.html">
+Buka
+</a>
 
-<script>
+</div>
 
-function cekUdara(){
+<div class="card">
 
-let pm25 =
-document.getElementById("pm25").value;
+<h3>📝 Kuis HOTS</h3>
 
-if(pm25 > 55){
+<p>
+Uji pemahaman dan dapatkan skor.
+</p>
 
-document.getElementById("hasil").innerHTML =
-"❌ Udara Tidak Sehat";
+<a href="kuis.html">
+Buka
+</a>
 
-}
-else{
+</div>
 
-document.getElementById("hasil").innerHTML =
-"✅ Udara Aman";
+<div class="card">
 
-}
+<h3>📊 Dashboard</h3>
 
-}
+<p>
+Visualisasi data lingkungan.
+</p>
 
-</script>
+<a href="dashboard.html">
+Buka
+</a>
 
-<hr>
+</div>
 
-<h2>🏆 Kuis HOTS Pencemaran Lingkungan</h2>
+</div>
 
-<form id="quiz">
+</section>
 
-<p><b>1.</b> Dampak PM2.5 yang tinggi adalah...</p>
-<input type="radio" name="q1" value="A"> A. Kesuburan tanah meningkat<br>
-<input type="radio" name="q1" value="B"> B. Risiko penyakit menurun<br>
-<input type="radio" name="q1" value="C"> C. Gangguan pernapasan meningkat<br>
-<input type="radio" name="q1" value="D"> D. Oksigen bertambah<br>
-
-<hr>
+<section class="sdgs">
 
-<p><b>2.</b> Dampak pembuangan deterjen ke sungai adalah...</p>
-<input type="radio" name="q2" value="A"> A. Air lebih bersih<br>
-<input type="radio" name="q2" value="B"> B. Populasi ikan bertambah<br>
-<input type="radio" name="q2" value="C"> C. Ekosistem terganggu<br>
-<input type="radio" name="q2" value="D"> D. Air makin jernih<br>
+<h2>🌍 SDGs yang Didukung</h2>
 
-<hr>
+<ul>
 
-<p><b>3.</b> Cara mengurangi pencemaran udara yang paling efektif adalah...</p>
-<input type="radio" name="q3" value="A"> A. Menambah kendaraan pribadi<br>
-<input type="radio" name="q3" value="B"> B. Menggunakan transportasi umum<br>
-<input type="radio" name="q3" value="C"> C. Menebang pohon<br>
-<input type="radio" name="q3" value="D"> D. Membakar sampah<br>
+<li><b>SDG 3</b> - Kehidupan Sehat dan Sejahtera</li>
 
-<hr>
+<li><b>SDG 11</b> - Kota dan Permukiman Berkelanjutan</li>
 
-<p><b>4.</b> Sampah plastik yang menumpuk menyebabkan...</p>
-<input type="radio" name="q4" value="A"> A. Pencemaran udara<br>
-<input type="radio" name="q4" value="B"> B. Pencemaran suara<br>
-<input type="radio" name="q4" value="C"> C. Pencemaran tanah<br>
-<input type="radio" name="q4" value="D"> D. Pencemaran cahaya<br>
+<li><b>SDG 13</b> - Penanganan Perubahan Iklim</li>
 
-<hr>
+</ul>
 
-<p><b>5.</b> Daur ulang sampah mendukung SDGs...</p>
-<input type="radio" name="q5" value="A"> A. SDG 3 dan 11<br>
-<input type="radio" name="q5" value="B"> B. SDG 11 dan 13<br>
-<input type="radio" name="q5" value="C"> C. SDG 3, 11, dan 13<br>
-<input type="radio" name="q5" value="D"> D. SDG 1 saja<br>
+</section>
 
-<hr>
+<footer>
 
-<button type="button" onclick="cekKuis()">
-Periksa Jawaban
-</button>
+<p>
 
-</form>
+© 2026 EcoThink - Media Pembelajaran IPA Berbasis Komputasi
 
-<h3 id="skor"></h3>
+</p>
 
-<div id="pembahasan"></div>
+</footer>
 
-<script>
+</body>
 
-function cekKuis(){
-
-let skor = 0;
-
-let pembahasan = "";
-
-if(document.querySelector('input[name="q1"]:checked')?.value=="C"){
-skor++;
-pembahasan += "✅ Soal 1 Benar<br>";
-}else{
-pembahasan += "❌ Soal 1 Salah. Jawaban: C<br>";
-}
-
-if(document.querySelector('input[name="q2"]:checked')?.value=="C"){
-skor++;
-pembahasan += "✅ Soal 2 Benar<br>";
-}else{
-pembahasan += "❌ Soal 2 Salah. Jawaban: C<br>";
-}
-
-if(document.querySelector('input[name="q3"]:checked')?.value=="B"){
-skor++;
-pembahasan += "✅ Soal 3 Benar<br>";
-}else{
-pembahasan += "❌ Soal 3 Salah. Jawaban: B<br>";
-}
-
-if(document.querySelector('input[name="q4"]:checked')?.value=="C"){
-skor++;
-pembahasan += "✅ Soal 4 Benar<br>";
-}else{
-pembahasan += "❌ Soal 4 Salah. Jawaban: C<br>";
-}
-
-if(document.querySelector('input[name="q5"]:checked')?.value=="C"){
-skor++;
-pembahasan += "✅ Soal 5 Benar<br>";
-}else{
-pembahasan += "❌ Soal 5 Salah. Jawaban: C<br>";
-}
-
-document.getElementById("skor").innerHTML =
-"🏆 Skor Anda: " + (skor*20) + "/100";
-
-if(skor==5){
-pembahasan += "<br>🥇 Badge: Ahli Lingkungan";
-}
-else if(skor>=3){
-pembahasan += "<br>🥈 Badge: Penjaga Lingkungan";
-}
-else{
-pembahasan += "<br>🥉 Badge: Pemula Lingkungan";
-}
-
-document.getElementById("pembahasan").innerHTML = pembahasan;
-
-}
-
-</script>
+</html>
