@@ -412,59 +412,65 @@ const pembahasan=[
 
 function cekJawaban(){
 
-let skor=0;
-let hasilPembahasan="";
+for(let i = 1; i <= 10; i++){
 
-for(let i=1;i<=10;i++){
+let jawaban = document.querySelector(`input[name="q${i}"]:checked`);
 
-let jawaban=document.querySelector('input[name="q"+i]:checked');
+if(!jawaban){
+alert("Silakan jawab semua soal terlebih dahulu.");
+return;
+}
 
-if(jawaban && jawaban.value===kunci[i-1]){
-skor+=10;
+}
+  
+let skor = 0;
+let hasilPembahasan = "";
+
+for(let i = 1; i <= 10; i++){
+
+let jawaban = document.querySelector(`input[name="q${i}"]:checked`);
+
+if(jawaban && jawaban.value === kunci[i-1]){
+skor += 10;
 }
 
 hasilPembahasan +=
-"<div class='pembahasan-item'><b>Soal "+i+"</b><br>" +
-"Jawaban yang benar: <b>"+kunci[i-1]+"</b><br>" +
+"<div class='pembahasan-item'>" +
+"<b>Soal " + i + "</b><br>" +
+"Jawaban yang benar: <b>" + kunci[i-1] + "</b><br>" +
 pembahasan[i-1] +
 "</div>";
 
 }
 
-document.getElementById("hasil").style.display="block";
-document.getElementById("skor").innerHTML=skor+"/100";
+document.getElementById("hasil").style.display = "block";
 
-let badge="";
+document.getElementById("skor").innerHTML = skor + "/100";
 
-if(skor>=90){
-badge="🥇 EcoThink Master";
+let badge = "";
+
+if(skor >= 90){
+badge = "🥇 EcoThink Master";
 }
-else if(skor>=75){
-badge="🥈 EcoThink Explorer";
+else if(skor >= 75){
+badge = "🥈 EcoThink Explorer";
 }
-else if(skor>=60){
-badge="🥉 EcoThink Learner";
+else if(skor >= 60){
+badge = "🥉 EcoThink Learner";
 }
 else{
-badge="🌱 EcoThink Beginner";
+badge = "🌱 EcoThink Beginner";
 }
 
-document.getElementById("badge").innerHTML=badge;
+document.getElementById("badge").innerHTML = badge;
 
-document.getElementById("pembahasan").innerHTML=
+document.getElementById("pembahasan").innerHTML =
 "<h2 style='color:#2e7d32;margin-bottom:15px;'>📖 Pembahasan Jawaban</h2>"
-+hasilPembahasan;
++ hasilPembahasan;
 
 window.scrollTo({
-top:document.body.scrollHeight,
-behavior:"smooth"
+top: document.body.scrollHeight,
+behavior: "smooth"
 });
 
 }
-
-</script>
-
-</body>
-
-</html>
-```
