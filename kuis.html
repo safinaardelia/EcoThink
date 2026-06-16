@@ -1,0 +1,471 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EcoThink | Kuis EcoThink</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+
+background:
+linear-gradient(
+rgba(255,255,255,0.90),
+rgba(255,255,255,0.90)),
+url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+color:#333;
+line-height:1.8;
+
+}
+
+.back-home{
+position:fixed;
+top:20px;
+left:20px;
+z-index:9999;
+}
+
+.back-home a{
+background:#2e7d32;
+color:white;
+text-decoration:none;
+padding:12px 20px;
+border-radius:12px;
+font-weight:bold;
+box-shadow:0 4px 10px rgba(0,0,0,0.25);
+transition:0.3s;
+}
+
+.back-home a:hover{
+background:#1b5e20;
+transform:scale(1.05);
+}
+
+header{
+
+height:60vh;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+color:white;
+
+background:
+linear-gradient(
+rgba(46,125,50,0.75),
+rgba(76,175,80,0.75)),
+url("https://images.unsplash.com/photo-1473773508845-188df298d2d1");
+
+background-size:cover;
+background-position:center;
+
+}
+
+header h1{
+font-size:70px;
+margin-bottom:20px;
+}
+
+header p{
+font-size:24px;
+width:70%;
+}
+
+.container{
+width:90%;
+max-width:1100px;
+margin:auto;
+padding:40px 0;
+}
+
+.card{
+
+background:white;
+
+padding:30px;
+margin-bottom:30px;
+
+border-radius:20px;
+
+box-shadow:0px 4px 15px rgba(0,0,0,0.15);
+
+}
+
+.card h2{
+color:#2e7d32;
+margin-bottom:15px;
+}
+
+.question{
+margin-bottom:30px;
+padding-bottom:20px;
+border-bottom:1px solid #ddd;
+}
+
+.question p{
+font-weight:bold;
+margin-bottom:10px;
+}
+
+label{
+display:block;
+padding:8px;
+margin-bottom:5px;
+cursor:pointer;
+border-radius:10px;
+transition:0.3s;
+}
+
+label:hover{
+background:#e8f5e9;
+}
+
+button{
+
+padding:15px 30px;
+
+border:none;
+border-radius:12px;
+
+background:#4caf50;
+
+color:white;
+
+font-size:18px;
+font-weight:bold;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+button:hover{
+background:#2e7d32;
+}
+
+#hasil{
+
+display:none;
+
+margin-top:30px;
+
+background:#e8f5e9;
+
+padding:30px;
+
+border-radius:20px;
+
+text-align:center;
+
+}
+
+#skor{
+
+font-size:60px;
+
+font-weight:bold;
+
+color:#2e7d32;
+
+margin:10px 0;
+
+}
+
+#badge{
+
+font-size:28px;
+
+font-weight:bold;
+
+margin-bottom:25px;
+
+}
+
+#pembahasan{
+margin-top:20px;
+text-align:left;
+}
+
+.pembahasan-item{
+
+background:white;
+
+padding:15px;
+
+margin-top:15px;
+
+border-left:6px solid #4caf50;
+
+border-radius:10px;
+
+}
+
+footer{
+
+background:#2e7d32;
+
+color:white;
+
+text-align:center;
+
+padding:30px;
+
+margin-top:50px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="back-home">
+<a href="index.html">🏠 Kembali ke Beranda</a>
+</div>
+
+<header>
+
+<h1>📝 Kuis EcoThink</h1>
+
+<p>
+
+Uji pemahamanmu mengenai pencemaran lingkungan,
+kualitas lingkungan, dan Sustainable Development Goals (SDGs)
+melalui kuis interaktif.
+
+</p>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Petunjuk Pengerjaan</h2>
+
+<p>
+Bacalah setiap soal dengan cermat kemudian pilih satu jawaban yang paling tepat.
+Setelah semua soal selesai dijawab, klik tombol <b>"Periksa Jawaban"</b>
+untuk melihat skor dan pembahasan.
+</p>
+
+</div>
+
+<form id="quizForm">
+
+<div class="card">
+
+<div class="question">
+<p>1. Kadar PM2.5 di suatu kota meningkat akibat pembakaran sampah terbuka. Dampak yang paling mungkin terjadi adalah...</p>
+<label><input type="radio" name="q1" value="A"> A. Suhu udara menurun drastis.</label>
+<label><input type="radio" name="q1" value="B"> B. Risiko gangguan pernapasan meningkat.</label>
+<label><input type="radio" name="q1" value="C"> C. Kandungan oksigen di atmosfer bertambah.</label>
+<label><input type="radio" name="q1" value="D"> D. Air tanah menjadi lebih jernih.</label>
+</div>
+
+<div class="question">
+<p>2. Nilai TDS air minum mencapai 650 ppm. Langkah yang paling tepat adalah...</p>
+<label><input type="radio" name="q2" value="A"> A. Tetap mengonsumsi air tersebut.</label>
+<label><input type="radio" name="q2" value="B"> B. Menambahkan gula agar aman.</label>
+<label><input type="radio" name="q2" value="C"> C. Melakukan pemeriksaan kualitas air lebih lanjut.</label>
+<label><input type="radio" name="q2" value="D"> D. Mencampurnya dengan air hujan.</label>
+</div>
+
+<div class="question">
+<p>3. Air dengan pH 4,5 memiliki sifat...</p>
+<label><input type="radio" name="q3" value="A"> A. Basa.</label>
+<label><input type="radio" name="q3" value="B"> B. Netral.</label>
+<label><input type="radio" name="q3" value="C"> C. Asam.</label>
+<label><input type="radio" name="q3" value="D"> D. Tidak dapat diukur.</label>
+</div>
+
+<div class="question">
+<p>4. Pengelolaan botol plastik bekas yang paling tepat adalah dengan menerapkan prinsip...</p>
+<label><input type="radio" name="q4" value="A"> A. Reduce dan Recycle.</label>
+<label><input type="radio" name="q4" value="B"> B. Dibakar.</label>
+<label><input type="radio" name="q4" value="C"> C. Dibuang ke sungai.</label>
+<label><input type="radio" name="q4" value="D"> D. Dikubur di tanah.</label>
+</div>
+
+<div class="question">
+<p>5. Penggunaan transportasi umum dapat membantu mengurangi...</p>
+<label><input type="radio" name="q5" value="A"> A. Pencemaran tanah.</label>
+<label><input type="radio" name="q5" value="B"> B. Pencemaran udara.</label>
+<label><input type="radio" name="q5" value="C"> C. Erosi tanah.</label>
+<label><input type="radio" name="q5" value="D"> D. Penguapan air.</label>
+</div>
+
+<div class="question">
+<p>6. Dampak utama pencemaran air terhadap ekosistem adalah...</p>
+<label><input type="radio" name="q6" value="A"> A. Organisme air berkembang lebih cepat.</label>
+<label><input type="radio" name="q6" value="B"> B. Air menjadi lebih jernih.</label>
+<label><input type="radio" name="q6" value="C"> C. Kehidupan organisme air terganggu.</label>
+<label><input type="radio" name="q6" value="D"> D. Oksigen terlarut meningkat.</label>
+</div>
+
+<div class="question">
+<p>7. Upaya mengurangi pencemaran lingkungan mendukung pencapaian SDG 3 karena...</p>
+<label><input type="radio" name="q7" value="A"> A. Menambah emisi karbon.</label>
+<label><input type="radio" name="q7" value="B"> B. Mendukung kehidupan sehat dan sejahtera.</label>
+<label><input type="radio" name="q7" value="C"> C. Mengurangi kebutuhan air bersih.</label>
+<label><input type="radio" name="q7" value="D"> D. Meningkatkan penggunaan plastik.</label>
+</div>
+
+<div class="question">
+<p>8. Penerapan prinsip 3R secara konsisten akan memberikan dampak berupa...</p>
+<label><input type="radio" name="q8" value="A"> A. Berkurangnya volume sampah.</label>
+<label><input type="radio" name="q8" value="B"> B. Meningkatnya PM2.5.</label>
+<label><input type="radio" name="q8" value="C"> C. Menurunnya pH air.</label>
+<label><input type="radio" name="q8" value="D"> D. Meningkatnya TDS.</label>
+</div>
+
+<div class="question">
+<p>9. PM2.5 lebih berbahaya dibandingkan debu biasa karena...</p>
+<label><input type="radio" name="q9" value="A"> A. Ukurannya sangat kecil sehingga dapat masuk ke paru-paru.</label>
+<label><input type="radio" name="q9" value="B"> B. Berwarna lebih gelap.</label>
+<label><input type="radio" name="q9" value="C"> C. Selalu mengandung air.</label>
+<label><input type="radio" name="q9" value="D"> D. Tidak dapat terbawa angin.</label>
+</div>
+
+<div class="question">
+<p>10. Tindakan yang paling tepat untuk menjaga keberlanjutan lingkungan adalah...</p>
+<label><input type="radio" name="q10" value="A"> A. Menunggu pemerintah bekerja sendiri.</label>
+<label><input type="radio" name="q10" value="B"> B. Mengabaikan masalah lingkungan kecil.</label>
+<label><input type="radio" name="q10" value="C"> C. Berpartisipasi aktif menjaga dan melestarikan lingkungan.</label>
+<label><input type="radio" name="q10" value="D"> D. Menggunakan plastik sekali pakai sebanyak mungkin.</label>
+</div>
+
+<center>
+<button type="button" onclick="cekJawaban()">✅ Periksa Jawaban</button>
+</center>
+
+</div>
+
+</form>
+
+<div id="hasil">
+
+<h2>🎉 Hasil Kuis Anda</h2>
+
+<div id="skor"></div>
+
+<div id="badge"></div>
+
+<div id="pembahasan"></div>
+
+<button onclick="location.reload()">
+🔄 Ulangi Kuis
+</button>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>
+
+© 2026 EcoThink | Media Pembelajaran IPA Berbasis Komputasi dan SDGs
+
+</p>
+
+</footer>
+
+<script>
+
+const kunci=["B","C","C","A","B","C","B","A","A","C"];
+
+const pembahasan=[
+"Partikel PM2.5 dapat masuk hingga ke paru-paru sehingga meningkatkan risiko gangguan kesehatan.",
+"Nilai TDS yang tinggi perlu diuji lebih lanjut sebelum air digunakan untuk konsumsi.",
+"pH di bawah 7 menunjukkan bahwa suatu larutan bersifat asam.",
+"Botol plastik merupakan sampah anorganik yang sebaiknya dikelola dengan prinsip Reduce dan Recycle.",
+"Transportasi umum membantu mengurangi emisi kendaraan sehingga menekan pencemaran udara.",
+"Pencemaran air dapat mengganggu keseimbangan dan kelangsungan hidup organisme air.",
+"Lingkungan yang bersih mendukung tercapainya kehidupan sehat dan sejahtera sesuai SDG 3.",
+"Penerapan 3R membantu mengurangi jumlah sampah yang dihasilkan masyarakat.",
+"Ukuran PM2.5 yang sangat kecil membuat partikel ini mudah masuk ke sistem pernapasan.",
+"Pelestarian lingkungan membutuhkan partisipasi aktif seluruh masyarakat."
+];
+
+function cekJawaban(){
+
+let skor=0;
+let hasilPembahasan="";
+
+for(let i=1;i<=10;i++){
+
+let jawaban=document.querySelector('input[name="q"+i]:checked');
+
+if(jawaban && jawaban.value===kunci[i-1]){
+skor+=10;
+}
+
+hasilPembahasan +=
+"<div class='pembahasan-item'><b>Soal "+i+"</b><br>" +
+"Jawaban yang benar: <b>"+kunci[i-1]+"</b><br>" +
+pembahasan[i-1] +
+"</div>";
+
+}
+
+document.getElementById("hasil").style.display="block";
+document.getElementById("skor").innerHTML=skor+"/100";
+
+let badge="";
+
+if(skor>=90){
+badge="🥇 EcoThink Master";
+}
+else if(skor>=75){
+badge="🥈 EcoThink Explorer";
+}
+else if(skor>=60){
+badge="🥉 EcoThink Learner";
+}
+else{
+badge="🌱 EcoThink Beginner";
+}
+
+document.getElementById("badge").innerHTML=badge;
+
+document.getElementById("pembahasan").innerHTML=
+"<h2 style='color:#2e7d32;margin-bottom:15px;'>📖 Pembahasan Jawaban</h2>"
++hasilPembahasan;
+
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:"smooth"
+});
+
+}
+
+</script>
+
+</body>
+
+</html>
+```
