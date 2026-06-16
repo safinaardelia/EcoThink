@@ -51,7 +51,8 @@ border-radius:12px;
 text-decoration:none;
 color:white;
 font-weight:bold;
-box-shadow:0 4px 12px rgba(0,0,0,0.2);
+box-shadow:0 4px 10px rgba(0,0,0,0.25);
+transition:0.3s;
 
 }
 
@@ -78,8 +79,8 @@ color:white;
 
 background:
 linear-gradient(
-rgba(46,125,50,0.70),
-rgba(76,175,80,0.70)),
+rgba(46,125,50,0.72),
+rgba(76,175,80,0.72)),
 url("https://images.unsplash.com/photo-1473773508845-188df298d2d1");
 
 background-size:cover;
@@ -89,7 +90,7 @@ background-position:center;
 
 .hero h1{
 
-font-size:70px;
+font-size:72px;
 margin-bottom:20px;
 
 }
@@ -124,10 +125,8 @@ font-weight:bold;
 .container{
 
 width:90%;
-max-width:1200px;
-
+max-width:1100px;
 margin:auto;
-
 padding:50px 0;
 
 }
@@ -135,13 +134,9 @@ padding:50px 0;
 .card{
 
 background:white;
-
 padding:30px;
-
 margin-bottom:30px;
-
 border-radius:20px;
-
 box-shadow:0 4px 15px rgba(0,0,0,0.12);
 
 }
@@ -150,6 +145,19 @@ box-shadow:0 4px 15px rgba(0,0,0,0.12);
 
 color:#2e7d32;
 margin-bottom:15px;
+
+}
+
+.card p{
+
+margin-bottom:10px;
+
+}
+
+ol{
+
+margin-left:25px;
+margin-top:10px;
 
 }
 
@@ -178,27 +186,38 @@ padding:10px;
 td{
 
 padding:10px;
-text-align:center;
+
+}
+
+input,
+textarea{
+
+width:100%;
+padding:10px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:15px;
+
+}
+
+textarea{
+
+resize:vertical;
 
 }
 
 button{
 
-margin-top:15px;
-
+margin-top:20px;
 background:#4caf50;
-
-padding:12px 25px;
-
-border:none;
-
-border-radius:10px;
-
 color:white;
-
+padding:12px 25px;
+border:none;
+border-radius:10px;
+font-size:16px;
 font-weight:bold;
-
 cursor:pointer;
+transition:0.3s;
 
 }
 
@@ -208,23 +227,14 @@ background:#2e7d32;
 
 }
 
-select,input{
+#hasilValidasi{
 
-padding:10px;
-border-radius:8px;
-border:1px solid #ccc;
-margin-top:10px;
-margin-right:10px;
-
-}
-
-.output{
-
-margin-top:15px;
+margin-top:20px;
+padding:20px;
 background:#e8f5e9;
-padding:15px;
+border-left:6px solid #4caf50;
 border-radius:10px;
-font-weight:bold;
+display:none;
 
 }
 
@@ -234,6 +244,7 @@ background:#2e7d32;
 padding:20px;
 text-align:center;
 color:white;
+margin-top:50px;
 
 }
 
@@ -244,11 +255,9 @@ color:white;
 <body>
 
 <div class="back-home">
-
 <a href="index.html">
 🏠 Kembali ke Beranda
 </a>
-
 </div>
 
 <section class="hero">
@@ -257,183 +266,183 @@ color:white;
 
 <p>
 
-Eksplorasi data dan simulasi lingkungan berbasis komputasi
-untuk memahami pencemaran udara, kualitas air,
-serta pengambilan keputusan yang mendukung Sustainable Development Goals (SDGs).
+Ruang kerja digital untuk mendokumentasikan hasil pengamatan,
+analisis data, dan penyusunan kesimpulan mengenai permasalahan
+pencemaran lingkungan berbasis komputasi dan literasi sains.
 
 </p>
 
-<a href="#praktikum" class="btn-start">
+<a href="#lembar-kerja" class="btn-start">
 🚀 Mulai Praktikum
 </a>
 
 </section>
 
-<div class="container" id="praktikum">
+<div class="container" id="lembar-kerja">
 
 <div class="card">
 
-<h2>📋 Petunjuk Praktikum</h2>
+<h2>📋 Petunjuk Pengerjaan</h2>
 
-<p>
-Lakukan setiap aktivitas laboratorium berikut. Analisis data yang tersedia,
-pilih solusi terbaik, dan amati hasil simulasi untuk memahami kondisi lingkungan
-secara ilmiah.
-</p>
+<ol>
+
+<li>Bentuk kelompok sesuai arahan guru.</li>
+
+<li>Tentukan topik atau objek lingkungan yang akan diamati.</li>
+
+<li>Lakukan pengamatan, pengukuran, atau pengumpulan data berdasarkan hasil observasi maupun studi literatur.</li>
+
+<li>Lengkapi identitas kelompok dan isikan hasil pengamatan pada lembar kerja yang tersedia.</li>
+
+<li>Tuliskan analisis kelompok berdasarkan data yang telah diperoleh.</li>
+
+<li>Susun kesimpulan secara ilmiah berdasarkan hasil analisis dan pembahasan.</li>
+
+<li>Klik tombol <b>Validasi Kesimpulan</b> untuk memperoleh umpan balik otomatis dari sistem.</li>
+
+<li>Apabila sistem memberikan saran perbaikan, diskusikan kembali hasil kelompok dan lakukan revisi kesimpulan.</li>
+
+</ol>
 
 </div>
 
 <div class="card">
 
-<h2>🌫️ Praktikum 1 - Analisis Data PM2.5</h2>
-
-<p>Data hasil pengukuran kualitas udara selama satu minggu.</p>
+<h2>👥 Identitas Kelompok</h2>
 
 <table>
 
 <tr>
-<th>Hari</th>
-<th>PM2.5 (µg/m³)</th>
+<td width="30%">Nama Kelompok</td>
+<td><input type="text" placeholder="Tuliskan nama kelompok"></td>
 </tr>
 
-<tr><td>Senin</td><td>18</td></tr>
-<tr><td>Selasa</td><td>24</td></tr>
-<tr><td>Rabu</td><td>35</td></tr>
-<tr><td>Kamis</td><td>46</td></tr>
-<tr><td>Jumat</td><td>40</td></tr>
-<tr><td>Sabtu</td><td>28</td></tr>
-<tr><td>Minggu</td><td>20</td></tr>
+<tr>
+<td>Nama Anggota</td>
+<td><textarea rows="3" placeholder="Tuliskan nama seluruh anggota kelompok"></textarea></td>
+</tr>
+
+<tr>
+<td>Topik Pengamatan</td>
+<td><input type="text" placeholder="Contoh: Pencemaran Air Sungai / Kualitas Udara Lingkungan Sekolah"></td>
+</tr>
+
+<tr>
+<td>Lokasi Pengamatan</td>
+<td><input type="text" placeholder="Tuliskan lokasi pengamatan"></td>
+</tr>
+
+<tr>
+<td>Tanggal Praktikum</td>
+<td><input type="date"></td>
+</tr>
 
 </table>
 
-<button onclick="analisisPM25()">
-Analisis Data
-</button>
-
-<div id="hasilPM25" class="output"></div>
-
 </div>
 
 <div class="card">
 
-<h2>💧 Praktikum 2 - Analisis Kualitas Air</h2>
+<h2>📊 Lembar Hasil Pengamatan</h2>
 
 <p>
-Pilih salah satu sampel air untuk mengetahui hasil analisis berdasarkan
-parameter pH dan TDS.
+Tuliskan parameter atau fenomena yang diamati beserta hasil pengamatan kelompok Anda.
 </p>
 
-<select id="sampel">
+<table>
 
-<option value="A">Sampel A (pH 6.8 | TDS 180)</option>
-<option value="B">Sampel B (pH 5.4 | TDS 620)</option>
-<option value="C">Sampel C (pH 7.2 | TDS 220)</option>
+<tr>
 
-</select>
+<th width="10%">No</th>
 
-<br>
+<th width="40%">Parameter/Fenomena yang Diamati</th>
 
-<button onclick="cekAir()">
-Analisis Sampel
-</button>
+<th>Hasil Pengamatan</th>
 
-<div id="hasilAir" class="output"></div>
+</tr>
+
+<tr>
+<td>1</td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>2</td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>3</td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>4</td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+</tr>
+
+<tr>
+<td>5</td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+</tr>
+
+</table>
 
 </div>
 
 <div class="card">
 
-<h2>♻️ Praktikum 3 - Studi Kasus Lingkungan</h2>
+<h2>🔍 Analisis Hasil Pengamatan</h2>
 
 <p>
-
-Di sebuah desa, warga masih membakar sampah plastik setiap sore.
-Selain itu, limbah rumah tangga dibuang langsung ke sungai sehingga air
-menjadi keruh dan beberapa ikan ditemukan mati.
-
+Jelaskan hubungan antara data yang diperoleh dengan konsep pencemaran lingkungan,
+faktor penyebab, dampak yang mungkin terjadi, serta alternatif solusi yang dapat dilakukan.
 </p>
 
-<p><b>Menurut Anda, solusi paling tepat adalah:</b></p>
-
-<select id="kasus">
-
-<option value="A">Membakar sampah di lokasi yang lebih jauh.</option>
-
-<option value="B">Membiarkan masyarakat menyesuaikan diri.</option>
-
-<option value="C">Menerapkan 3R, edukasi lingkungan, dan pengolahan limbah.</option>
-
-<option value="D">Menutup akses sungai untuk masyarakat.</option>
-
-</select>
-
-<br>
-
-<button onclick="cekKasus()">
-Evaluasi Jawaban
-</button>
-
-<div id="hasilKasus" class="output"></div>
+<textarea rows="8"
+placeholder="Tuliskan hasil analisis kelompok Anda di sini..."></textarea>
 
 </div>
 
 <div class="card">
 
-<h2>📊 Praktikum 4 - Simulasi Indeks Kondisi Lingkungan</h2>
-
-<p>Tentukan kondisi lingkungan berdasarkan tiga parameter berikut.</p>
-
-<label>Jumlah Kendaraan:</label><br>
-
-<select id="kendaraan">
-<option value="30">Rendah</option>
-<option value="20">Sedang</option>
-<option value="10">Tinggi</option>
-</select>
-
-<br><br>
-
-<label>Pengelolaan Sampah:</label><br>
-
-<select id="sampah">
-<option value="35">Baik</option>
-<option value="20">Cukup</option>
-<option value="10">Kurang</option>
-</select>
-
-<br><br>
-
-<label>Ruang Terbuka Hijau:</label><br>
-
-<select id="hijau">
-<option value="35">Banyak</option>
-<option value="20">Sedang</option>
-<option value="10">Sedikit</option>
-</select>
-
-<br>
-
-<button onclick="hitungIndeks()">
-Hitung Indeks
-</button>
-
-<div id="hasilIndeks" class="output"></div>
-
-</div>
-
-<div class="card">
-
-<h2>🌍 Kesimpulan Praktikum</h2>
+<h2>✍️ Kesimpulan Kelompok</h2>
 
 <p>
 
-Laboratorium Virtual EcoThink menunjukkan bahwa kualitas lingkungan
-dapat dianalisis melalui data dan simulasi sederhana. Melalui pendekatan
-berbasis komputasi, peserta didik dapat menghubungkan konsep IPA,
-literasi sains, dan pengambilan keputusan untuk mendukung pembangunan
-berkelanjutan sesuai tujuan SDGs.
+Tuliskan kesimpulan berdasarkan hasil pengamatan dan analisis yang telah dilakukan.
+Kesimpulan sebaiknya memuat kondisi lingkungan yang diamati, dampak yang ditemukan,
+serta solusi atau upaya pelestarian yang dapat diterapkan.
 
 </p>
+
+<textarea id="kesimpulan"
+rows="8"
+placeholder="Tuliskan kesimpulan hasil praktikum kelompok Anda..."></textarea>
+
+<button onclick="validasiKesimpulan()">
+✅ Validasi Kesimpulan
+</button>
+
+<div id="hasilValidasi"></div>
+
+</div>
+
+<div class="card">
+
+<h2>🌱 Refleksi Kelompok</h2>
+
+<p>
+Tuliskan satu tindakan nyata yang dapat dilakukan oleh kelompok Anda untuk membantu menjaga kualitas lingkungan di sekitar sekolah atau tempat tinggal.
+</p>
+
+<textarea rows="5"
+placeholder="Tuliskan refleksi atau rencana aksi kelompok..."></textarea>
 
 </div>
 
@@ -451,90 +460,76 @@ berkelanjutan sesuai tujuan SDGs.
 
 <script>
 
-function analisisPM25(){
+function validasiKesimpulan(){
 
-let data=[18,24,35,46,40,28,20];
+let teks=document.getElementById("kesimpulan").value.toLowerCase().trim();
 
-let total=0;
+let hasil=document.getElementById("hasilValidasi");
 
-for(let i=0;i<data.length;i++){
-total+=data[i];
-}
+if(teks.length<20){
 
-let rata=(total/data.length).toFixed(1);
+hasil.style.display="block";
 
-let hasil="Rata-rata PM2.5 = "+rata+" µg/m³.<br>";
+hasil.innerHTML=
+"🔴 <b>Kesimpulan masih terlalu singkat.</b><br><br>" +
+"Silakan lengkapi kesimpulan dengan menjelaskan hasil pengamatan, dampak yang ditemukan, dan solusi yang dapat dilakukan.";
 
-if(rata<=25){
-hasil+="✅ Kualitas udara tergolong baik.";
-}
-else if(rata<=40){
-hasil+="🟡 Kualitas udara sedang dan perlu perhatian.";
-}
-else{
-hasil+="🔴 Kualitas udara kurang baik dan perlu pengendalian pencemaran.";
-}
-
-document.getElementById("hasilPM25").innerHTML=hasil;
+return;
 
 }
 
-function cekAir(){
+let kataKunci=[
+"pencemaran",
+"lingkungan",
+"air",
+"udara",
+"tanah",
+"kualitas",
+"sampah",
+"limbah",
+"kesehatan",
+"ekosistem",
+"dampak",
+"solusi",
+"pelestarian",
+"pengelolaan",
+"3r",
+"sdgs"
+];
 
-let pilihan=document.getElementById("sampel").value;
+let jumlah=0;
 
-let hasil="";
+for(let i=0;i<kataKunci.length;i++){
 
-if(pilihan=="A"){
-hasil="✅ Sampel A memiliki kualitas paling baik dan relatif layak digunakan.";
-}
-else if(pilihan=="B"){
-hasil="🔴 Sampel B memiliki pH rendah dan TDS tinggi sehingga perlu pengolahan lebih lanjut.";
-}
-else{
-hasil="🟢 Sampel C memiliki kualitas air yang baik dan mendekati kondisi ideal.";
-}
-
-document.getElementById("hasilAir").innerHTML=hasil;
-
-}
-
-function cekKasus(){
-
-let jawaban=document.getElementById("kasus").value;
-
-if(jawaban=="C"){
-document.getElementById("hasilKasus").innerHTML=
-"✅ Benar. Pendekatan terbaik adalah penerapan 3R, edukasi masyarakat, dan pengelolaan limbah yang baik.";
-}
-else{
-document.getElementById("hasilKasus").innerHTML=
-"❌ Jawaban kurang tepat. Solusi yang efektif harus mengatasi sumber pencemaran sekaligus meningkatkan kesadaran masyarakat.";
+if(teks.includes(kataKunci[i])){
+jumlah++;
 }
 
 }
 
-function hitungIndeks(){
+hasil.style.display="block";
 
-let kendaraan=parseInt(document.getElementById("kendaraan").value);
-let sampah=parseInt(document.getElementById("sampah").value);
-let hijau=parseInt(document.getElementById("hijau").value);
+if(jumlah>=5){
 
-let skor=kendaraan+sampah+hijau;
+hasil.innerHTML=
+"✅ <b>Validasi Berhasil.</b><br><br>" +
+"Kesimpulan kelompok sudah memuat konsep-konsep penting yang relevan dengan praktikum. Uraian yang disampaikan telah menunjukkan hubungan antara hasil pengamatan, kondisi lingkungan, dampak yang terjadi, dan upaya penyelesaiannya.";
 
-let hasil="Indeks Kondisi Lingkungan = <b>"+skor+"</b><br>";
-
-if(skor>=80){
-hasil+="🌱 Kondisi lingkungan sangat baik dan berkelanjutan.";
 }
-else if(skor>=60){
-hasil+="🌿 Kondisi lingkungan cukup baik tetapi masih perlu perbaikan.";
+else if(jumlah>=3){
+
+hasil.innerHTML=
+"🟡 <b>Kesimpulan Sudah Cukup Baik.</b><br><br>" +
+"Kesimpulan telah mengarah pada konsep yang benar, namun masih dapat diperdalam. Cobalah menambahkan hubungan antara data hasil pengamatan, dampak pencemaran, dan solusi yang dapat dilakukan.";
+
 }
 else{
-hasil+="⚠️ Risiko pencemaran tinggi. Diperlukan upaya pengelolaan lingkungan yang lebih baik.";
-}
 
-document.getElementById("hasilIndeks").innerHTML=hasil;
+hasil.innerHTML=
+"🔴 <b>Kesimpulan Belum Optimal.</b><br><br>" +
+"Kesimpulan yang dituliskan belum menunjukkan keterkaitan yang jelas dengan hasil praktikum. Silakan pelajari kembali materi pada menu <b>Materi EcoThink</b>, diskusikan hasil pengamatan bersama kelompok, kemudian lakukan revisi agar kesimpulan lebih ilmiah dan sesuai dengan data yang diperoleh.";
+
+}
 
 }
 
