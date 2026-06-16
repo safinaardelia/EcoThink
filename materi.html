@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>EcoThink | Materi Pencemaran Lingkungan</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family: 'Segoe UI', sans-serif;
+
+    background:
+    linear-gradient(
+    rgba(255,255,255,0.90),
+    rgba(255,255,255,0.90)),
+    url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e");
+
+    background-size:cover;
+    background-attachment:fixed;
+    background-position:center;
+
+    color:#333;
+
+    line-height:1.8;
+
+}
+
+header{
+
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    color:white;
+
+    background:
+    linear-gradient(
+    rgba(46,125,50,0.75),
+    rgba(76,175,80,0.75)),
+    url("https://images.unsplash.com/photo-1473773508845-188df298d2d1");
+
+    background-size:cover;
+    background-position:center;
+
+}
+
+header h1{
+
+    font-size:70px;
+
+    animation:fadeDown 2s;
+
+}
+
+header p{
+
+    font-size:24px;
+
+    width:70%;
+
+    animation:fadeUp 2s;
+
+}
+
+.btn{
+
+    margin-top:30px;
+
+    padding:15px 30px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#ffffff;
+
+    color:#2e7d32;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    text-decoration:none;
+
+    transition:0.3s;
+
+}
+
+.btn:hover{
+
+    transform:scale(1.1);
+
+}
+
+@keyframes fadeDown{
+
+    from{
+        opacity:0;
+        transform:translateY(-50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+nav{
+
+    background:#2e7d32;
+
+    padding:15px;
+
+    text-align:center;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+}
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    margin:0 15px;
+
+    font-weight:bold;
+
+}
+
+.container{
+
+    width:90%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:40px 0;
+
+}
+
+.card{
+
+    background:white;
+
+    margin-bottom:30px;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0px 4px 15px rgba(0,0,0,0.15);
+
+}
+
+.card h2{
+
+    color:#2e7d32;
+
+    margin-bottom:15px;
+
+}
+
+.card img{
+
+    width:100%;
+
+    border-radius:15px;
+
+    margin-bottom:20px;
+
+}
+
+.tahukah{
+
+    background:#e8f5e9;
+
+    border-left:8px solid #4caf50;
+
+    padding:15px;
+
+    margin-top:20px;
+
+    border-radius:10px;
+
+}
+
+.quiz-box{
+
+    background:#f1f8e9;
+
+    padding:20px;
+
+    margin-top:20px;
+
+    border-radius:15px;
+
+}
+
+button{
+
+    padding:10px 20px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#4caf50;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+button:hover{
+
+    background:#2e7d32;
+
+}
+
+input{
+
+    padding:10px;
+
+    width:200px;
+
+    border-radius:10px;
+
+    border:1px solid #ccc;
+
+}
+
+.result{
+
+    margin-top:15px;
+
+    font-weight:bold;
+
+}
+
+footer{
+
+    background:#2e7d32;
+
+    color:white;
+
+    text-align:center;
+
+    padding:30px;
+
+    margin-top:50px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🌍 EcoThink</h1>
+
+<p>
+
+Media Pembelajaran IPA Berbasis Komputasi untuk Memahami
+Pencemaran Lingkungan dan Mewujudkan Tujuan Pembangunan
+Berkelanjutan (SDGs).
+
+</p>
+
+<a href="#materi" class="btn">
+
+📚 Mulai Belajar
+
+</a>
+
+</header>
+
+<nav>
+
+<a href="index.html">🏠 Beranda</a>
+
+<a href="#materi">📚 Materi</a>
+
+<a href="#sdgs">🌍 SDGs</a>
+
+<a href="#referensi">📖 Referensi</a>
+
+</nav>
+
+<div class="container" id="materi">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1511497584788-876760111969">
+
+<h2>A. Pengertian Pencemaran Lingkungan</h2>
+
+<p>
+
+Pencemaran lingkungan merupakan masuknya makhluk hidup,
+zat, energi, atau komponen lain ke lingkungan sehingga
+menyebabkan kualitas lingkungan menurun dan tidak mampu
+berfungsi sebagaimana mestinya. Pencemaran dapat terjadi
+pada udara, air, maupun tanah akibat aktivitas manusia
+atau proses alam tertentu.
+
+</p>
+
+<p>
+
+Dalam kehidupan sehari-hari, pencemaran sering ditemukan
+di sekitar kita. Asap kendaraan bermotor, limbah rumah
+tangga yang dibuang ke sungai, dan sampah plastik yang
+menumpuk merupakan contoh nyata pencemaran lingkungan.
+Apabila tidak ditangani dengan baik, pencemaran dapat
+mengancam kesehatan manusia dan keseimbangan ekosistem.
+
+</p>
+
+<p>
+
+Menurut Capaian Pembelajaran IPA Fase D Kurikulum Merdeka,
+peserta didik diharapkan mampu menganalisis interaksi
+antara makhluk hidup dan lingkungannya, termasuk berbagai
+permasalahan lingkungan serta upaya pelestariannya.
+
+</p>
+
+<div class="tahukah">
+
+<b>🌱 Tahukah Anda?</b>
+
+<br><br>
+
+Organisasi Kesehatan Dunia (WHO) menyatakan bahwa jutaan
+kematian setiap tahun berkaitan dengan kualitas lingkungan
+dan udara yang buruk.
+
+</div>
+
+<div class="quiz-box">
+
+<h3>Benar atau Salah?</h3>
+
+<p>
+
+"Pencemaran lingkungan hanya disebabkan oleh aktivitas manusia."
+
+</p>
+
+<button onclick="cek1(false)">Benar</button>
+
+<button onclick="cek1(true)">Salah</button>
+
+<p id="hasil1" class="result"></p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>B. Pencemaran Udara</h2>
+
+<p>
+Pencemaran udara terjadi ketika udara mengandung zat pencemar dalam jumlah melebihi batas aman. Sumber pencemaran udara antara lain kendaraan bermotor, aktivitas industri, pembakaran sampah, dan kebakaran hutan.
+</p>
+
+<p>
+Salah satu indikator pencemaran udara adalah PM2.5, yaitu partikel berukuran sangat kecil yang dapat masuk hingga ke paru-paru dan pembuluh darah manusia. Paparan PM2.5 dalam jangka panjang dapat meningkatkan risiko penyakit pernapasan dan kardiovaskular.
+</p>
+
+<div class="tahukah">
+<b>🌱 Tahukah Anda?</b><br><br>
+PM2.5 berukuran kurang dari 2,5 mikrometer, sekitar 30 kali lebih kecil daripada diameter rambut manusia.
+</div>
+
+<div class="quiz-box">
+
+<h3>🧪 Simulasi PM2.5</h3>
+
+<p>Masukkan nilai PM2.5 (µg/m³)</p>
+
+<input type="number" id="pm25">
+
+<button onclick="cekPM25()">
+Cek Kualitas Udara
+</button>
+
+<p id="hasilPM25" class="result"></p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>C. Pencemaran Air</h2>
+
+<p>
+Pencemaran air terjadi ketika zat pencemar masuk ke badan air sehingga kualitas air menurun. Pencemar dapat berasal dari limbah rumah tangga, deterjen, pestisida, pupuk kimia, maupun limbah industri.
+</p>
+
+<p>
+Air yang tercemar dapat mengganggu kehidupan organisme air dan membahayakan kesehatan manusia apabila digunakan untuk kebutuhan sehari-hari.
+</p>
+
+<p>
+Kualitas air sering dinilai menggunakan parameter fisik dan kimia, salah satunya adalah TDS (Total Dissolved Solids).
+</p>
+
+<div class="tahukah">
+
+<b>🌱 Tahukah Anda?</b><br><br>
+
+TDS menunjukkan jumlah zat terlarut dalam air. Semakin tinggi nilainya, semakin banyak zat yang terkandung di dalam air tersebut.
+
+</div>
+
+<div class="quiz-box">
+
+<h3>💧 Cek TDS Air Minum</h3>
+
+<p>Masukkan nilai TDS (ppm)</p>
+
+<input type="number" id="tds">
+
+<button onclick="cekTDS()">
+Cek Air
+</button>
+
+<p id="hasilTDS" class="result"></p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>D. Derajat Keasaman (pH) Air</h2>
+
+<p>
+Derajat keasaman atau pH menunjukkan tingkat keasaman maupun kebasaan suatu larutan. Skala pH berkisar antara 0 hingga 14.
+</p>
+
+<p>
+Air minum yang baik umumnya memiliki pH antara 6,5 hingga 8,5. Nilai pH yang terlalu rendah menunjukkan sifat asam, sedangkan nilai pH yang terlalu tinggi menunjukkan sifat basa.
+</p>
+
+<div class="tahukah">
+
+<b>🌱 Tahukah Anda?</b><br><br>
+
+Air hujan alami umumnya memiliki pH sekitar 5,6 karena mengandung karbon dioksida yang larut di atmosfer.
+
+</div>
+
+<div class="quiz-box">
+
+<h3>⚗️ Cek pH Air</h3>
+
+<p>Masukkan nilai pH</p>
+
+<input type="number" step="0.1" id="ph">
+
+<button onclick="cekPH()">
+Cek pH
+</button>
+
+<p id="hasilPH" class="result"></p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>E. Pencemaran Tanah</h2>
+
+<p>
+Pencemaran tanah terjadi akibat masuknya bahan pencemar ke dalam tanah sehingga menurunkan kualitas dan kesuburannya. Contohnya adalah sampah plastik, limbah logam berat, dan penggunaan pestisida secara berlebihan.
+</p>
+
+<p>
+Sampah plastik menjadi salah satu penyebab utama pencemaran tanah karena membutuhkan waktu yang sangat lama untuk terurai.
+</p>
+
+<div class="tahukah">
+
+<b>🌱 Tahukah Anda?</b><br><br>
+
+Sebagian plastik dapat memerlukan waktu ratusan tahun untuk terurai secara alami di lingkungan.
+
+</div>
+
+<div class="quiz-box">
+
+<h3>♻️ Pilah Sampah</h3>
+
+<p>
+
+Botol plastik termasuk jenis sampah...
+
+</p>
+
+<button onclick="pilah('salah')">
+Organik
+</button>
+
+<button onclick="pilah('benar')">
+Anorganik
+</button>
+
+<p id="hasilSampah" class="result"></p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>F. Upaya Mengurangi Pencemaran Lingkungan</h2>
+
+<p>
+Pencemaran lingkungan dapat dikurangi melalui penerapan prinsip 3R yaitu Reduce, Reuse, dan Recycle. Selain itu, penggunaan transportasi umum, penghijauan, dan pengelolaan limbah yang baik juga dapat membantu menjaga kualitas lingkungan.
+</p>
+
+<p>
+Partisipasi masyarakat sangat penting dalam menjaga lingkungan agar tetap sehat dan berkelanjutan bagi generasi mendatang.
+</p>
+
+<p>
+Tindakan sederhana yang dilakukan secara konsisten dapat memberikan dampak besar bagi keberlanjutan lingkungan.
+</p>
+
+<div class="tahukah">
+
+<b>🌱 Tahukah Anda?</b><br><br>
+
+Satu pohon dewasa dapat membantu menyerap karbon dioksida dan menghasilkan oksigen yang dibutuhkan manusia untuk bernapas.
+
+</div>
+
+</div>
+
+<div class="card" id="sdgs">
+
+<h2>🌍 SDGs Corner</h2>
+
+<h3>SDG 3 - Kehidupan Sehat dan Sejahtera</h3>
+
+<p>
+Mengurangi pencemaran lingkungan membantu meningkatkan kualitas kesehatan masyarakat.
+</p>
+
+<h3>SDG 11 - Kota dan Permukiman Berkelanjutan</h3>
+
+<p>
+Pengelolaan lingkungan yang baik mendukung terciptanya kota yang aman dan nyaman.
+</p>
+
+<h3>SDG 13 - Penanganan Perubahan Iklim</h3>
+
+<p>
+Pengurangan emisi dan pelestarian lingkungan berkontribusi terhadap mitigasi perubahan iklim.
+</p>
+
+</div>
+
+<div class="card" id="referensi">
+
+<h2>📖 Daftar Pustaka (APA 7th Edition)</h2>
+
+<p>
+Badan Standar, Kurikulum, dan Asesmen Pendidikan. (2022). <i>Capaian Pembelajaran Mata Pelajaran Ilmu Pengetahuan Alam Fase D</i>. Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi.
+</p>
+
+<p>
+Kemendikbudristek. (2022). <i>Ilmu Pengetahuan Alam untuk SMP/MTs Kelas VII Kurikulum Merdeka</i>. Jakarta: Pusat Perbukuan.
+</p>
+
+<p>
+World Health Organization. (2021). <i>WHO Global Air Quality Guidelines</i>. Geneva: WHO.
+</p>
+
+<p>
+United Nations. (2023). <i>The Sustainable Development Goals Report 2023</i>. New York: United Nations.
+</p>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>
+
+© 2026 EcoThink | Media Pembelajaran IPA Berbasis Komputasi dan SDGs
+
+</p>
+
+</footer>
+
+<script>
+
+function cek1(benar){
+
+if(benar){
+
+document.getElementById("hasil1").innerHTML =
+"✅ Benar! Selain aktivitas manusia, pencemaran juga dapat dipicu oleh proses alam.";
+
+}
+else{
+
+document.getElementById("hasil1").innerHTML =
+"❌ Kurang tepat. Pencemaran tidak hanya disebabkan oleh aktivitas manusia.";
+
+}
+
+}
+
+function cekPM25(){
+
+let nilai = document.getElementById("pm25").value;
+
+if(nilai > 55){
+
+document.getElementById("hasilPM25").innerHTML =
+"❌ Udara Tidak Sehat. Gunakan masker dan kurangi aktivitas luar ruangan.";
+
+}
+else{
+
+document.getElementById("hasilPM25").innerHTML =
+"✅ Udara Aman.";
+
+}
+
+}
+
+function cekTDS(){
+
+let tds = document.getElementById("tds").value;
+
+if(tds <= 300){
+
+document.getElementById("hasilTDS").innerHTML =
+"✅ Air relatif baik untuk dikonsumsi.";
+
+}
+else{
+
+document.getElementById("hasilTDS").innerHTML =
+"⚠️ TDS tinggi. Perlu pemeriksaan lebih lanjut.";
+
+}
+
+}
+
+function cekPH(){
+
+let ph = document.getElementById("ph").value;
+
+if(ph >= 6.5 && ph <= 8.5){
+
+document.getElementById("hasilPH").innerHTML =
+"✅ pH berada pada rentang yang baik.";
+
+}
+else{
+
+document.getElementById("hasilPH").innerHTML =
+"⚠️ pH berada di luar rentang ideal air minum.";
+
+}
+
+}
+
+function pilah(jawaban){
+
+if(jawaban=="benar"){
+
+document.getElementById("hasilSampah").innerHTML =
+"✅ Tepat! Botol plastik termasuk sampah anorganik.";
+
+}
+else{
+
+document.getElementById("hasilSampah").innerHTML =
+"❌ Kurang tepat. Botol plastik termasuk sampah anorganik.";
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
